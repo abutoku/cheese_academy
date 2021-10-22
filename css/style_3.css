@@ -1,0 +1,53 @@
+/* cat.htmlのスタイル */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+	background: white;
+  color:white;
+}
+
+.cat_header {
+	height: 560px;
+  background-size: cover;
+  background-position: center;
+	background-image: url(../img/sea.jpg);
+  display: flex;
+}
+
+h1 {
+  font-size: 56px;
+}
+
+.header_contents{
+  align-self:center;
+}
+
+.headaer_text {
+  width: 80%;
+  margin-left: 120px;
+  padding: 10px;
+  background-color: rgba(0,0,0,0.2);
+}
+
+
+
+p {
+  margin-bottom: 14px;;
+}
+
+
+
+/* 波 */
+.wave{
+position:relative;
+height:50px;/*何も表示されない場合は各波の親要素に高さを持たせましょう。*/
+}
+canvas{
+position: absolute;
+bottom: 0;
+left:0;
+width: 100%;
+}

@@ -1,0 +1,157 @@
+/* googleフォント */
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+/* mouse.htmlのスタイル */
+body {
+  background:#f9dc5c;
+	width: 100;
+}
+
+.main-contents {
+	text-align: center;
+}
+
+#main_header {
+  margin-top:100px;
+	margin-bottom: 80px;
+	margin-left:50px;
+	width:90%;
+}
+
+h1 {
+	text-align: center;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 80px;
+	color:#465362;
+}
+
+.image_containar {
+  position: relative;  
+	width:400px;
+	margin: 0 auto;	
+}
+
+#mouse {
+  display: block;
+	margin: 0 auto;
+}
+
+#cheese {
+  position: absolute;
+  top:135px;
+  left:85px;
+	z-index:10;
+	cursor: pointer;
+}
+
+#mouse {
+	position: absolute;
+  transition: 2s;
+	z-index:8;
+}
+
+#cat_01{
+	position: absolute;
+	top:-65px;
+	left:150px;
+	transition: 3s;
+}
+
+#cat_02 {	
+	transition: 2s;
+}
+
+/* 消えるクラス */
+.delete {
+	opacity: 0;
+}
+
+/* 現れるクラス */
+.show {
+	opacity: 1;
+}
+
+
+/*========= ローディング画面のためのCSS ===============*/
+#splash {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: #333;
+	z-index: 9999999;
+	text-align:center;
+	color:#fff;
+}
+
+#splash-logo {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+
+/*========= 画面遷移のためのCSS ===============*/
+
+/*画面遷移アニメーション*/
+
+body{
+    background:#333;/*遷移アニメーションと同じ色を指定*/
+}
+
+body.appear{
+    background:#ffd61a/*画面を開いた後の背景色を指定*/
+}
+
+.splashbg{
+	position: fixed;
+	top: 0;
+	right:0;
+	bottom:0;
+	left: 0;
+	border-width: 0px;/*開始はボーダーの太さは0*/
+	border-style:solid;
+    border-color: #666;/*拡大する四角の色*/
+	animation-duration:.5s;
+	animation-fill-mode:forwards;
+}
+
+@keyframes backBoxAnime{
+	99.9% {/*アニメーション終了ぎりぎりまで*/
+        z-index: 2;/*最前面に*/
+		border-width: 0px;/*開始はボーダーの太さは0*/
+	}
+    100%{
+       z-index: -1; /*最背面に*/
+        border-width: 0px;/*終了はボーダーの太さは0*/
+    }
+}
+
+/*画面遷移の後現れるコンテンツ設定*/
+#container{
+    position: relative;
+	opacity: 0;/*はじめは透過0に*/
+}
+
+/*bodyにappearクラスがついたら出現*/
+body.appear #container{
+	animation-name:PageAnimeAppear;
+	animation-duration:1s;
+	animation-delay:0.2s;
+	animation-fill-mode:forwards;
+	opacity: 0;
+}
+
+@keyframes PageAnimeAppear{
+	0% {
+	opacity: 0;
+	}
+	100% {
+	opacity: 1;
+}
+}
+
