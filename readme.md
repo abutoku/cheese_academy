@@ -2,7 +2,7 @@
 
 ## DEMO
 
--[ページリンク](https://github.com/abutoku/cheese_academy)
+-[cheese_academy](https://github.com/abutoku/cheese_academy)
 
 ## プロダクトの紹介
 
